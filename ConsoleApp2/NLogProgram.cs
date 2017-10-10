@@ -19,7 +19,7 @@ namespace ConsoleApp2
     //https://stackoverflow.com/questions/3000653/using-nlog-as-a-rollover-file-logger
 
 
-    class Program
+    class NLogProgram
     {
         private readonly TimeSpan _duration;
 
@@ -35,7 +35,7 @@ namespace ConsoleApp2
                 duration = TimeSpan.FromSeconds(seconds);
             }
 
-            new Program(duration).Run();
+            new NLogProgram(duration).Run();
 
             NLog.LogManager.Flush();
 
@@ -43,7 +43,7 @@ namespace ConsoleApp2
             Console.ReadKey();
         }
 
-        public Program(TimeSpan duration)
+        public NLogProgram(TimeSpan duration)
         {
             _duration = duration;
             _logger = NLog.LogManager.GetCurrentClassLogger();

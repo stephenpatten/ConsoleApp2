@@ -19,21 +19,17 @@ namespace ConsoleApp2
     //Maintaining this separation lets you keep logging statements in your code and 
     //easily change how and where the logs are written, just by updating the configuration in one place.
 
-    class NLogAdapter : ILogger
+    class NLogAdapter<T> : ILogger
     {
+        private static readonly NLog.Logger log = NLog.LogManager.GetLogger((typeof(T).FullName));
+
         public void Log(LogEntry entry)
         {
-            NLog.Logger log;
-            if (entry.Context != null)
-            {
-                log = NLog.LogManager.GetLogger(entry.Context.GetType().Namespace);
-            }
-            else
-            {
-                log = NLog.LogManager.GetLogger("DefaultLogger");
-            }
             switch (entry.Severity)
             {
+                case LoggingEventType.Verbose:
+                    log.Trace(entry.Exception, entry.Message);
+                    break;
                 case LoggingEventType.Debug:
                     log.Debug(entry.Exception, entry.Message);
                     break;
