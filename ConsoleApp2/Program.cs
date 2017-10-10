@@ -27,10 +27,6 @@ namespace ConsoleApp2
 
         static void Main(string[] args)
         {
-            //var builder = new ContainerBuilder();
-            // Register types that expose interfaces...
-            //builder.RegisterType<c => new CreateLogger()>().As<NLog.ILogger>();
-
             var duration = TimeSpan.FromSeconds(10);
 
             if (args.Length > 0)
@@ -46,7 +42,6 @@ namespace ConsoleApp2
             Console.WriteLine("Finished....");
             Console.ReadKey();
         }
-
 
         public Program(TimeSpan duration)
         {

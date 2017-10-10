@@ -55,7 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateLogger.cs" />
     <Compile Include="ILogger.cs" />
     <Compile Include="LoggerExtensions.cs" />
     <Compile Include="NLogAdapter.cs" />
