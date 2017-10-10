@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 namespace ConsoleApp2
 {
   
-    class AdapterProgram
+    class NlogAdapterProgram
     {
         private readonly TimeSpan _duration;
 
-        private readonly ConsoleApp2.NLogAdapter<AdapterProgram> _logger; 
+        private readonly ConsoleApp2.NLogAdapter<NlogAdapterProgram> _logger; 
 
         static void Main(string[] args)
         {
@@ -27,7 +27,7 @@ namespace ConsoleApp2
                 duration = TimeSpan.FromSeconds(seconds);
             }
 
-            new ConsoleApp2.AdapterProgram(duration).Run();
+            new ConsoleApp2.NlogAdapterProgram(duration).Run();
 
             NLog.LogManager.Flush();
 
@@ -35,10 +35,10 @@ namespace ConsoleApp2
             Console.ReadKey();
         }
 
-        public AdapterProgram(TimeSpan duration)
+        public NlogAdapterProgram(TimeSpan duration)
         {
             _duration = duration;
-            _logger = new ConsoleApp2.NLogAdapter<AdapterProgram>();
+            _logger = new ConsoleApp2.NLogAdapter<NlogAdapterProgram>();
         }
 
         private void Run()

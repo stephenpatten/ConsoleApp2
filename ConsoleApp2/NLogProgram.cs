@@ -10,15 +10,6 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2
 {
-    //Test Harness:
-    //http://www.nimaara.com/2016/01/01/high-performance-logging-log4net/
-    //https://github.com/NimaAra/Easy.Logger
-
-    //NLog: 
-    //https://github.com/nlog/NLog/wiki/File-target#one-log-file-per-day
-    //https://stackoverflow.com/questions/3000653/using-nlog-as-a-rollover-file-logger
-
-
     class NLogProgram
     {
         private readonly TimeSpan _duration;

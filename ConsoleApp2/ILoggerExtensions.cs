@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2
 {
-    public static class LoggerExtensions
+    public static class ILoggerExtensions
     {
         public static void Log(this ILogger logger, string message)
         {

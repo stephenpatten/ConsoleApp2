@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ConsoleApp2.AdapterProgram</StartupObject>
+    <StartupObject>ConsoleApp2.NlogAdapterProgram</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Autofac, Version=4.6.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
@@ -59,9 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ILogger.cs" />
-    <Compile Include="LoggerExtensions.cs" />
+    <Compile Include="ILoggerExtensions.cs" />
     <Compile Include="NLogAdapter.cs" />
-    <Compile Include="AdapterProgram.cs" />
+    <Compile Include="NlogAdapterProgram.cs" />
     <Compile Include="NLogProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
