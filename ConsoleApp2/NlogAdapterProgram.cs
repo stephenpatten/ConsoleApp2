@@ -15,10 +15,12 @@ namespace ConsoleApp2
     {
         private readonly TimeSpan _duration;
 
-        private readonly ConsoleApp2.NLogAdapter<NlogAdapterProgram> _logger; 
+        private static readonly ConsoleApp2.NLogAdapter<NlogAdapterProgram> _logger = new ConsoleApp2.NLogAdapter<NlogAdapterProgram>(); 
 
         static void Main(string[] args)
         {
+           
+
             var duration = TimeSpan.FromSeconds(10);
 
             if (args.Length > 0)
@@ -33,12 +35,16 @@ namespace ConsoleApp2
 
             Console.WriteLine("Finished....");
             Console.ReadKey();
+
+            using (var scope = new MonitoredScope(_logger, Guid.NewGuid().ToString("N")))
+            {
+                Thread.Sleep(500);
+            }
         }
 
         public NlogAdapterProgram(TimeSpan duration)
         {
             _duration = duration;
-            _logger = new ConsoleApp2.NLogAdapter<NlogAdapterProgram>();
         }
 
         private void Run()
