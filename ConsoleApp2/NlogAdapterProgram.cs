@@ -31,15 +31,17 @@ namespace ConsoleApp2
 
             new ConsoleApp2.NlogAdapterProgram(duration).Run();
 
-            NLog.LogManager.Flush();
-
-            Console.WriteLine("Finished....");
-            Console.ReadKey();
+            
 
             using (var scope = new MonitoredScope(_logger, Guid.NewGuid().ToString("N")))
             {
                 Thread.Sleep(500);
             }
+
+            NLog.LogManager.Flush();
+
+            Console.WriteLine("Finished....");
+            Console.ReadKey();
         }
 
         public NlogAdapterProgram(TimeSpan duration)
